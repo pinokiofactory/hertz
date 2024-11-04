@@ -8,7 +8,8 @@ module.exports = {
     let installed = info.exists("app/env")
     let running = {
       install: info.running("install.js"),
-      start: info.running("start.js"),
+      server: info.running("server.js"),
+      client: info.running("client.js"),
       update: info.running("update.js"),
       reset: info.running("reset.js")
     }
@@ -20,8 +21,8 @@ module.exports = {
         href: "install.js",
       }]
     } else if (installed) {
-      if (running.start) {
-        let local = info.local("start.js")
+      if (running.server) {
+        let local = info.local("server.js")
         if (local && local.url) {
           return [{
             default: true,
@@ -31,14 +32,14 @@ module.exports = {
           }, {
             icon: 'fa-solid fa-terminal',
             text: "Terminal",
-            href: "start.js",
+            href: "server.js",
           }]
         } else {
           return [{
             default: true,
             icon: 'fa-solid fa-terminal',
             text: "Terminal",
-            href: "start.js",
+            href: "server.js",
           }]
         }
       } else if (running.update) {
@@ -57,10 +58,13 @@ module.exports = {
         }]
       } else {
         return [{
-          default: true,
           icon: "fa-solid fa-power-off",
-          text: "Start",
-          href: "start.js",
+          text: "Server",
+          href: "server.js",
+        }, {
+          icon: "fa-solid fa-power-off",
+          text: "Client",
+          href: "client.js",
         }, {
           icon: "fa-solid fa-plug",
           text: "Update",
