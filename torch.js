@@ -7,7 +7,7 @@ module.exports = {
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "pip3 install -U --pre torch<2.5.0 torchvision torchaudio<=2.5.0 --index-url https://download.pytorch.org/whl/nightly/cu121"
+        "message": "pip3 install -U --pre torch<2.5.0 torchvision torchaudio<2.5.0 --index-url https://download.pytorch.org/whl/nightly/cu121"
       }
     },
     // windows amd
