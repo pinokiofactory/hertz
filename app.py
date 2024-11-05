@@ -66,12 +66,12 @@ def load_and_preprocess_audio(audio_path):
     return audio_tensor.unsqueeze(0)
 
 def save_audio(audio_tensor):
-    torchaudio.save('output.wav', audio_tensor, 16000)
 
-#    audio_tensor = audio_tensor.cpu().squeeze()
-#    if audio_tensor.ndim == 1:
-#        audio_tensor = audio_tensor.unsqueeze(0)
-#    audio_tensor = audio_tensor.float()
+    audio_tensor = audio_tensor.cpu().squeeze()
+    if audio_tensor.ndim == 1:
+        audio_tensor = audio_tensor.unsqueeze(0)
+    audio_tensor = audio_tensor.float()
+    torchaudio.save('output.wav', audio_tensor, 16000)
 #
 #    # Make a waveform plot
 #    plt.figure(figsize=(4, 1))
