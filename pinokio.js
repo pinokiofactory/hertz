@@ -9,8 +9,6 @@ module.exports = {
     let running = {
       install: info.running("install.js"),
       start: info.running("start.js"),
-      server: info.running("server.js"),
-      client: info.running("client.js"),
       update: info.running("update.js"),
       reset: info.running("reset.js")
     }
@@ -62,10 +60,6 @@ module.exports = {
           icon: "fa-solid fa-power-off",
           text: "Start",
           href: "start.js",
-//        }, {
-//          icon: "fa-solid fa-power-off",
-//          text: "Client",
-//          href: "client.js",
         }, {
           icon: "fa-solid fa-plug",
           text: "Update",
